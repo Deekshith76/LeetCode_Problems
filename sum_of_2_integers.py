@@ -18,7 +18,7 @@ Constraints:
 
 import math
 def getSum(a,b):
-    return int(math.log2(pow(2, 2) * pow(2, 3))) #math returns a float point we need to type cast it to int
+    return int(math.log2(pow(2, a) * pow(2, b))) #math returns a float point we need to type cast it to int
 print(getSum(12,3))
 
 
