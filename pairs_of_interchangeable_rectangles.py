@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+# Method 1
 def interchangeableRectangles(rectangles): # List[[width, height],..] expects int
     
     count = defaultdict(lambda:0) # w/h : no.of rectangles with same w, h
@@ -15,6 +16,20 @@ def interchangeableRectangles(rectangles): # List[[width, height],..] expects in
         if c > 1:
             res += (c * (c-1)) // 2
     return res
+
+# Method 2
+
+def interchangeableRectangles2(rectangles):
+    count = 0
+    ratios = {}
+    for w, h in rectangles:
+        ratio = w/h
+        if ratio not in ratios:
+            ratios[ratio] = 0
+        else:
+            ratios[ratio] += 1
+            count += ratios[ratio]
+    return count
     
 rectangles = [[4,8],[3,6],[10,20],[15,30]]
 rectangles2 = [[4,5],[7,8]]
